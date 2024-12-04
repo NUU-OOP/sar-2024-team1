@@ -16,7 +16,7 @@ public class HomePage extends Application {
     @Override
     public void start(Stage stage) {
         try {
-            URL fxmlResource = getClass().getResource("/User.fxml");
+            URL fxmlResource = getClass().getResource("/payment.fxml");
             if (fxmlResource == null){
                 logger.log(Level.SEVERE, "FXML file '/HomePage.fxml' not found in resources.");
                 throw new NullPointerException("FXML file not found.");

@@ -36,6 +36,7 @@ public class BookingController implements Initializable {
             showAlert("All fields must be filled out.");
         } else {
             DBUtils.book(event, username, roomNumber, fromDate, untilDate);
+            DBUtils.changeScene(event, "/HomePage.fxml", "Welcome back", null, null);
         }
     }
 

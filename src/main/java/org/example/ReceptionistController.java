@@ -30,11 +30,11 @@ public class ReceptionistController {
     }
 
     private void handleAddUser(ActionEvent event) {
-        DBUtils.changeScene(event, "/sign-up.fxml", "Sign Up", null, null);
+        DBUtils.changeScene(event, "/sign-up.fxml", "Sign Up", null, "user");
     }
 
     private void handleBookRoom(ActionEvent event) {
-        DBUtils.changeScene(event, "/Booking.fxml", "Book Room", null, null);
+        DBUtils.changeScene(event, "/Booking.fxml", "Book Room", null, "user");
     }
 
     private void handleRemoveUser(ActionEvent event) {

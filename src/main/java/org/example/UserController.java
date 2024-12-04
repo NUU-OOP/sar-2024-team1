@@ -28,6 +28,8 @@ public class UserController implements Initializable {
     private Button bt_bookRoom;
     @FXML
     public Text tx_username;
+    @FXML
+    private Button bt_payment;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -38,6 +40,12 @@ public class UserController implements Initializable {
                 alert.setTitle("Booking service");
                 alert.setContentText("Booked successfully");
                 alert.showAndWait();
+            }
+        });
+        bt_payment.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                DBUtils.changeScene(event, "/payment.fxml", "Payment Page", null, null);
             }
         });
         mi_swimming_pool.setOnAction(new EventHandler<ActionEvent>() {
