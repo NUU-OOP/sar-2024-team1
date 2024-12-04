@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.HousekeepingListController">
+    <children>
+        <TableView fx:id="tableViewRooms" layoutX="10" layoutY="10" prefHeight="353.0" prefWidth="580">
+            <columns>
+                <TableColumn fx:id="columnid" prefWidth="50" text="id" />
+                <TableColumn fx:id="columnusername" prefWidth="120.0" text="username" />
+                <TableColumn fx:id="columncleaning" prefWidth="144.79998779296875" text="cleaning" />
+                <TableColumn fx:id="columnloundry" minWidth="1.60003662109375" prefWidth="126.39996337890625" text="loundry" />
+                <TableColumn fx:id="columnroom_number" prefWidth="138.39996337890625" text="room_number" />
+
+            </columns>
+        </TableView>
+        <Button fx:id="back" layoutX="543.0" layoutY="364.0" mnemonicParsing="false" text="Back">
+            <font>
+                <Font name="Times New Roman" size="13.0" />
+            </font>
+        </Button>
+    </children>
+
+</AnchorPane>
