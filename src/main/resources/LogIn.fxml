@@ -33,19 +33,23 @@
                   </Stop>
                </stops>
             </RadialGradient>
-         </textFill></Button>
+         </textFill>
+      </Button>
       <ImageView fitHeight="235.0" fitWidth="218.0" layoutX="14.0" layoutY="105.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@photos/img.png" />
-         </image></ImageView>
+         </image>
+      </ImageView>
       <Button fx:id="button_signup" layoutX="524.0" layoutY="360.0" mnemonicParsing="false" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Sign up" textFill="#227d94" underline="true">
          <font>
             <Font name="Arial Black" size="12.0" />
-         </font></Button>
+         </font>
+      </Button>
       <Text layoutX="468.0" layoutY="378.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Not user?">
          <font>
             <Font name="Arial" size="13.0" />
          </font>
       </Text>
+      <Button fx:id="bt_back" layoutX="402.0" layoutY="260.0" mnemonicParsing="false" text="Back" />
    </children>
 </AnchorPane>

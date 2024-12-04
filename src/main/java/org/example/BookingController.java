@@ -4,7 +4,10 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
+import javafx.scene.Node;
 
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -19,10 +22,12 @@ public class BookingController implements Initializable {
     private TextField fromDateField;
     @FXML
     private TextField untilDateField;
+    @FXML
+    private Button bt_back;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        // Initialization logic if needed
+        bt_back.setOnAction(this::handleBackButton);
     }
 
     @FXML
@@ -38,6 +43,10 @@ public class BookingController implements Initializable {
             DBUtils.book(event, username, roomNumber, fromDate, untilDate);
             DBUtils.changeScene(event, "/HomePage.fxml", "Welcome back", null, null);
         }
+    }
+
+    private void handleBackButton(ActionEvent event) {
+        DBUtils.goBack(event);
     }
 
     private void showAlert(String message) {

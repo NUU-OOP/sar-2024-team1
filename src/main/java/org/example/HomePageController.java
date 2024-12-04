@@ -41,12 +41,6 @@ public class HomePageController {
                 openListOfRooms(event,false);
             }
         });
-
-
-
-
-
-
     }
     private ListOfRoomsController listOfRoomsController; // Reference to the controller
 

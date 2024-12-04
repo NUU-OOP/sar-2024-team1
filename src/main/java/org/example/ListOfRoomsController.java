@@ -48,6 +48,13 @@ public class ListOfRoomsController implements Initializable {
                 DBUtils.changeScene(event, "/HomePage.fxml","Log in!",null,null);
             }
         });
+        bt_book.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent event) {
+                DBUtils.changeScene(event,"/payment.fxml",null,null,null);
+            }
+        });
 
         columnRoomNumber.setCellValueFactory(new PropertyValueFactory<>("roomNumber"));
         columnType.setCellValueFactory(new PropertyValueFactory<>("type"));
@@ -79,7 +86,6 @@ public class ListOfRoomsController implements Initializable {
 
             tableViewRooms.setItems(roomList);
 
-            bt_book.setVisible(false);
 
         }catch (SQLException e) {
             e.printStackTrace();

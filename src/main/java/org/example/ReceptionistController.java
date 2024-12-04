@@ -1,6 +1,7 @@
 package org.example;
 
 import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 
@@ -20,6 +21,10 @@ public class ReceptionistController {
     private TitledPane notifications;
     @FXML
     private Label username;
+    @FXML
+    private Button bt_list;
+    @FXML
+    private Button bt_back;
 
     @FXML
     public void initialize() {
@@ -27,6 +32,18 @@ public class ReceptionistController {
         book_room.setOnAction(this::handleBookRoom);
         remove_user.setOnAction(this::handleRemoveUser);
         cancel_booking.setOnAction(this::handleCancelBooking);
+        bt_list.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                DBUtils.changeScene(event, "/ListOfRooms.fxml", "List of Rooms", null, null);
+            }
+        });
+        bt_back.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                DBUtils.goBack(event);
+            }
+        });
     }
 
     private void handleAddUser(ActionEvent event) {

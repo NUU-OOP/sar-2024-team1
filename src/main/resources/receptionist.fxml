@@ -11,53 +11,27 @@
 <?import javafx.scene.text.Font?>
 
 
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.text.Text?>
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.ReceptionistController">
-   <children>
-      <Button fx:id="add_user" layoutX="326.0" layoutY="57.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="260.0" text="Add a user" />
-      <Button fx:id="book_room" layoutX="326.0" layoutY="91.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="260.0" text="Book a room" />
-      <Button fx:id="remove_user" layoutX="326.0" layoutY="130.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="260.0" text="Remove user" />
-      <Button fx:id="cancel_booking" layoutX="326.0" layoutY="165.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="260.0" text="Cancel a booking" />
-      <TitledPane fx:id="notifications" animated="false" layoutX="326.0" layoutY="200.0" prefHeight="160.0" prefWidth="260.0" text="Notifications">
-        <content>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-border-color: Blue;" />
-        </content>
-      </TitledPane>
-      <Label fx:id="Receptionist_Name" layoutX="10.0" layoutY="6.0" prefHeight="18.0" prefWidth="143.0" text="Receptionist: Name">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Label>
-      <TabPane fx:id="rooms_table" layoutX="10.0" layoutY="43.0" prefHeight="330.0" prefWidth="310.0" tabClosingPolicy="UNAVAILABLE">
-        <tabs>
-          <Tab fx:id="first_floor" text="Floor 1">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="262.0" prefWidth="299.0">
-                     <children>
-                        <TableView layoutX="14.0" layoutY="14.0" prefHeight="276.0" prefWidth="292.0">
-                          <columns>
-                            <TableColumn fx:id="room_number_1" prefWidth="75.0" text="Room №" />
-                            <TableColumn fx:id="room_availability_1" prefWidth="75.0" text="Availability" />
-                          </columns>
-                        </TableView>
-                     </children>
-                  </AnchorPane>
-            </content>
-          </Tab>
-          <Tab fx:id="second_floor" text="Floor 2">
-            <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <TableView layoutX="10.0" layoutY="12.0" prefHeight="281.0" prefWidth="295.0">
-                           <columns>
-                              <TableColumn fx:id="room_number_2" prefWidth="75.0" text="Room №" />
-                              <TableColumn fx:id="room_availability_2" prefWidth="75.0" text="Availability" />
-                           </columns>
-                        </TableView>
-                     </children>
-                  </AnchorPane>
-            </content>
-          </Tab>
-        </tabs>
-      </TabPane>
-   </children>
+    <children>
+        <Button fx:id="add_user" layoutX="326.0" layoutY="57.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="260.0" text="Add a user" />
+        <Button fx:id="book_room" layoutX="326.0" layoutY="91.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="260.0" text="Book a room" />
+        <Button fx:id="remove_user" layoutX="326.0" layoutY="130.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="260.0" text="Remove user" />
+        <Button fx:id="cancel_booking" layoutX="326.0" layoutY="165.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="260.0" text="Cancel a booking" />
+        <TitledPane fx:id="notifications" animated="false" layoutX="326.0" layoutY="200.0" prefHeight="160.0" prefWidth="260.0" text="Notifications" />
+        <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="54.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@photos/img_3.png" />
+            </image>
+        </ImageView>
+        <Button fx:id="bt_list" layoutX="157.0" layoutY="254.0" mnemonicParsing="false" text="..." />
+        <Text layoutX="63.0" layoutY="271.0" strokeType="OUTSIDE" strokeWidth="0.0" text="List of rooms:">
+            <font>
+                <Font name="Times New Roman" size="14.0" />
+            </font>
+        </Text>
+        <Button fx:id="bt_back" layoutX="14.0" layoutY="360.0" mnemonicParsing="false" text="back" />
+    </children>
 </AnchorPane>

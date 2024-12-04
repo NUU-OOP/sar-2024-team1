@@ -78,8 +78,9 @@ public class ManagerController implements Initializable {
         }
     }
 
+
     private void showAlert(String message) {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setContentText(message);
         alert.show();
     }

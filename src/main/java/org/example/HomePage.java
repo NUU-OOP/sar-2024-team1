@@ -16,17 +16,14 @@ public class HomePage extends Application {
     @Override
     public void start(Stage stage) {
         try {
-            URL fxmlResource = getClass().getResource("/payment.fxml");
+            URL fxmlResource = getClass().getResource("/HomePage.fxml");
             if (fxmlResource == null){
                 logger.log(Level.SEVERE, "FXML file '/HomePage.fxml' not found in resources.");
                 throw new NullPointerException("FXML file not found.");
             }
             Parent root = FXMLLoader.load(fxmlResource);
             Scene scene = new Scene(root);
-            stage.setTitle("Sign in" +
-                    "" +
-                    "" +
-                    "");
+            stage.setTitle("Sign in");
             stage.setScene(scene);
             stage.show();
         } catch (NullPointerException e) {

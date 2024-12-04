@@ -14,37 +14,49 @@ import java.util.ResourceBundle;
 
 public class SignUpController implements Initializable {
     @FXML
-    Button button_signup;
+    private Button button_signup;
     @FXML
-    Button button_login;
+    private Button button_login;
     @FXML
-    TextField tf_username;
+    private TextField tf_username;
     @FXML
-    TextField tf_password;
+    private TextField tf_password;
     @FXML
     private ChoiceBox<String> cb_role;
+    @FXML
+    private Button bt_back;
+
     public void setRole(String role) {
         cb_role.setValue(role);
     }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         button_signup.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                if(!tf_username.getText().trim().isEmpty() && !tf_password.getText().trim().isEmpty()&&!cb_role.getValue().trim().isEmpty()) {
-                    DBUtils.signUpUser(event,tf_username.getText(),tf_password.getText(),cb_role.getValue());
-                }else{
+                if (!tf_username.getText().trim().isEmpty() && !tf_password.getText().trim().isEmpty() && !cb_role.getValue().trim().isEmpty()) {
+                    DBUtils.signUpUser(event, tf_username.getText(), tf_password.getText(), cb_role.getValue());
+                } else {
                     System.out.println("The credentials are required!");
-                    Alert alert=new Alert(Alert.AlertType.ERROR);
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
                     alert.setContentText("The credentials are required!");
                     alert.show();
                 }
             }
         });
+
         button_login.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                DBUtils.changeScene(event, "/LogIn.fxml","Log in!",null,null);
+                DBUtils.changeScene(event, "/LogIn.fxml", "Log in!", null, null);
+            }
+        });
+
+        bt_back.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                DBUtils.goBack(event);
             }
         });
     }

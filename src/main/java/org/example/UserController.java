@@ -46,6 +46,8 @@ public class UserController implements Initializable {
             @Override
             public void handle(ActionEvent event) {
                 DBUtils.changeScene(event, "/payment.fxml", "Payment Page", null, null);
+                ListOfRoomsController controller = new ListOfRoomsController();
+                controller.setButtonVisibility(true);
             }
         });
         mi_swimming_pool.setOnAction(new EventHandler<ActionEvent>() {

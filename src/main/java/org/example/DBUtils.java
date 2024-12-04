@@ -12,9 +12,12 @@ import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 import java.util.Objects;
+import java.util.Stack;
 
 
 public class DBUtils {
+    private static Stack<Scene> sceneHistory = new Stack<>();
+
     public static boolean deleteUser(String username) {
         Connection connection = null;
         PreparedStatement psDelete = null;
@@ -174,12 +177,23 @@ public class DBUtils {
             stage.setTitle(title);
             stage.setScene(new Scene(root, 600, 400));
             stage.show();
+            sceneHistory.push(stage.getScene());
         } catch (IOException e) {
             e.printStackTrace();
             showAlert("Failed to load the specified FXML file.");
         } catch (Exception e) {
             e.printStackTrace();
             showAlert("Unexpected error occurred: " + e.getMessage());
+        }
+    }
+    public static void goBack(ActionEvent event) {
+        if (!sceneHistory.isEmpty()) {
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene previousScene = sceneHistory.pop();
+            stage.setScene(previousScene);
+            stage.show();
+        }else {
+            changeScene(event,"/HomePage.fxml",null,null,null);
         }
     }
     private static void showAlert(String message) {
@@ -362,7 +376,6 @@ public class DBUtils {
             psDelete = connection.prepareStatement("DELETE FROM users WHERE username = ? AND role = 'registrian'");
             psDelete.setString(1, username);
             int affectedRows = psDelete.executeUpdate();
-
             return affectedRows > 0;
         } catch (SQLException e) {
             e.printStackTrace();
